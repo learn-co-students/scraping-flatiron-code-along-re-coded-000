@@ -371,6 +371,7 @@ The `#make_courses` method should operate on the collection of course offering N
 
 ```ruby
 def make_courses
+  doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
   self. get_courses.each do |post|
      course = Course.new
      course.title = post.css("h2").text
