@@ -24,10 +24,12 @@ end
 
 def print_courses
  self.make_courses
- Course.all.each do |course|
+ self.all.each do |course|
    if course.title
      puts "Title: #{course.title}"
+   elsif course.schedule
      puts "  Schedule: #{course.schedule}"
+   elsif course.description
      puts "  Description: #{course.description}"
    end
  end
